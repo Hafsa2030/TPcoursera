@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="TPcoursera.css">
+    <title>Photo Gallery</title>
+</head>
+
+<body>
+    <!-- Div où l'image et le texte sont affichés -->
+    <div id="image">Hover over an image below to display here</div>
+
+    <!-- Galerie d'images -->
+    <div class="gallery">
+        <img src="R.jpg"alt=" "onmouseover="upDate(this)" onmouseout="unDo()">
+        <img src="R2.jpg"alt=" "onmouseover="upDate(this)"  onmouseout="unDo()">
+        <img src="OIP.jpg" alt=" " onmouseover="upDate(this)" onmouseout="unDo()">
+    </div>
+
+    <!-- JavaScript intégré -->
+    <script>
+        function upDate(previewPic) {
+            const imageDiv = document.getElementById("image");
+            imageDiv.style.backgroundImage = `url(${previewPic.src})`;
+            imageDiv.textContent = previewPic.alt;
+        }
+
+        function unDo() {
+            const imageDiv = document.getElementById("image");
+            imageDiv.style.backgroundImage = "";
+            imageDiv.textContent = "Hover over an image below to display here";
+        }
+    </script>
+</body>
+
+</html>
